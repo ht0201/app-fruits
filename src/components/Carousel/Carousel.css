@@ -1,0 +1,27 @@
+.category{
+   margin: 20px 0;
+}
+
+.category .e-tabs .title-cate {
+   list-style: none;
+   font-size: 24px;
+
+}
+ .title-cate>a {
+   color: #888;
+   font-weight: 600;
+   text-decoration: none;
+}
+
+a:hover {
+   color: green;
+}
+
+
+
+
+
+
+
+
+

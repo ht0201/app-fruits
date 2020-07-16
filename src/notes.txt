@@ -1,0 +1,15 @@
+1/ Từ page cart gồm : [ { product1 {...}, quantity1 } ,
+                        { product2 {...}, quantity2 } ]          DONE
+
+2/ Qua page thanh toán gồm : cart [ { product1 {...}, quantity1} ,
+                                    { product2 {...}, quantity2} ] 
+                             buyerA { name, phone, address }
+
+      => tạo reducer mới:    orders [ {cart1, buyerA}   ...  ]
+
+                chi tiết hơn        [ {   [ {  product1 {...}, quantity1 },  
+                                            {  product2 {...}, quantity2 }, 
+                                          ],  { name, phone, address }                                               
+                                       }
+                                    ]
+
