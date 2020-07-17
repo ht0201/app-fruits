@@ -6,15 +6,15 @@ class ProductList extends Component {
 
    render() {
       return (
-         <div className="category">
-            <ul className="e-tabs">
-               <li className="title-cate">            
+         <div className="container">
+            <div className="e-tabs">
+               <div className="title-cate">            
                   DANH SÁCH SẢN PHẨM 
                   <div className="row">
                     {this.props.children}
                   </div>
-               </li>          
-            </ul>
+               </div>          
+            </div>
             <div className="cart">
                <Link to='/cart' className="btn btn-primary
                       btn-rounded waves-effect waves-light"

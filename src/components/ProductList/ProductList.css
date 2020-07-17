@@ -1,20 +1,21 @@
-.category .e-tabs{
-   list-style: none;
-   text-decoration: none;
+.container .e-tabs{
    font-size: 16px;
-
 }
 
-.category .e-tabs .title-cate{
+.container .e-tabs .title-cate{
    font-size: 20px;
    color: #999;
 }
 
-.category .cart{
+.container .cart{
    width: 100%;
-    display: flex;
+   
     align-items: center;
     justify-content: space-around;
+}
+
+.container {
+   display: block;
 }
 
 

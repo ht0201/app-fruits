@@ -7,7 +7,7 @@ class ProductItem extends Component {
     var { product} = this.props;
 
     return (
-      <div className="col-lg-3 col-md-4 mb-r">
+      <div className="col-lg-3 col-md-4 col-sm-10 mb-r">
         <div className="card text-center card-cascade narrower">
           <div className="view overlay hm-white-slight z-depth-1">
             <img src={product.image} className="img-fluid" alt="abc" />

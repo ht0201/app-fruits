@@ -11,13 +11,7 @@
   padding: 10px 15px;
 }
 
-.container{
-  width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  
-}
+
 
 .menu{
   margin-top: 20px;
@@ -61,11 +55,6 @@
   margin-top: 40px;
 }
 
-.menu .level-0 img{
-  margin-left: 5px;
-  width: 10px;
-  height: 10px;
-}
 
 .menu .text>a:hover{
   border: none;
@@ -74,28 +63,38 @@
   color: red;
 }
 
-.menu .menu-item .div-sub-menu{
-  top: 100%;
-}
-
-.menu .menu-item .div-sub-menu .sub-menu{
-  width: 300px;
-  display: none;
-  list-style: none;
-  position: absolute;
-  margin-top: 10px;
-   
-}
-
-.menu .menu-item .div-sub-menu .sub-menu .level-1{
-  padding-top: 20px;
-}
-
-.menu .menu-item:hover .sub-menu{
-  display: block;
-  margin-bottom: -300px;
-}
-
 .menu .menu-item .level-1 a:hover {
   color: red;
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (min-width: 768px) {
+    
+}
+
+@media (max-width: 767px) {
+    
+}
+
+@media (min-width: 576px) {
+
+}
+
+@media (max-width: 575px) {
+
 }

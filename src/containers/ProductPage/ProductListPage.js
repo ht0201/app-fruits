@@ -11,11 +11,11 @@ class ProductListPage extends Component {
    render() {
       var { products } = this.props;
       return (
-         <div className="container">
+        
             <ProductList>
                {this.showProducts(products)}             
             </ProductList>
-         </div>
+         
       );
    }
 
