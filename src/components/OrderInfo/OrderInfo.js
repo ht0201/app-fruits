@@ -23,6 +23,7 @@ class OrderInfo extends Component {
                         <h6 className="card-subtitle mb-3  text-muted"> {orders.buyer.name} </h6>
                         <p className="card-text"> {orders.buyer.phone} </p>
                         <p className="card-text"> {orders.buyer.address}</p>
+                        <p className="card-text"> {orders.buyer.orderDate}</p>
                      </div>
                   </div>
                </div>

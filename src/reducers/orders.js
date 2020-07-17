@@ -6,7 +6,7 @@ const orders = (state = initialState, action) => {
    var { cart, buyer } = action;
    switch (action.type) {
       case Types.ORDER:
-         console.log(action);
+         
          state = {
             cart,
             buyer
