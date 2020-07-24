@@ -2,20 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import ProductList from '../../components/ProductList/ProductList';
-import { actAddToCart,  actFetchProductsRequest } from '../../actions';
+import { actAddToCart,  actFetchProductsRequest, actChangeMessage } from '../../actions';
 import ProductItem from '../../components/ProductItem/ProductItem';
+import MessageContainer from '../MessageContainer';
 
 
 class ProductListPage extends Component {
 
    render() {
-      var { products } = this.props;
+      var { products} = this.props;
+      
       return (
-        
+        <div className="container">
+           <div className="container">
+              <MessageContainer />
+           </div>
+           
             <ProductList>
                {this.showProducts(products)}             
             </ProductList>
-         
+           
+           
+         </div>     
       );
    }
 
@@ -24,7 +32,7 @@ class ProductListPage extends Component {
    }
 
    showProducts(products) {
-      var { onAddToCart } = this.props;
+      var { onAddToCart, onChangeMessage } = this.props;
       var result = null;
       if (products.length > 0) {
          result = products.map((product, index) => {
@@ -32,6 +40,7 @@ class ProductListPage extends Component {
                key={index}
                product={product}
                onAddToCart={onAddToCart}
+               onChangeMessage={onChangeMessage}
             />
          });
       }
@@ -52,6 +61,9 @@ const mapDispatchToProps = (dispatch, action) => {
       },
       onFetchProduct: () => {
          dispatch(actFetchProductsRequest());
+      },
+      onChangeMessage: (message) => {
+        dispatch(actChangeMessage(message));
       }
    }
 }

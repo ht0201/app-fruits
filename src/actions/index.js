@@ -57,3 +57,10 @@ export const actOrders= (cart, buyer) => {
        buyer
    }
 }
+
+export const actClearCart= () => {
+   return {
+      type: Types.CLEAR_CART,  
+   }
+}
+

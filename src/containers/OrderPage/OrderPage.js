@@ -7,9 +7,14 @@ import OrderResult from '../../components/OrderResult/OrderResult';
 
 class OrderPage extends Component {
 
+   componentDidUpdate(){
+
+   }
+
    render() {
       var { orders }  = this.props;
       var { cart } = orders;
+      console.log("ORD ",this.props);
       return (
          <div className="container">
             <OrderInfo orders={orders}>

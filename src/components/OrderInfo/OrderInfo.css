@@ -1,15 +1,17 @@
-.container .orders .titile h4 {
-   font-size: 1.5rem;
+.content .orders .titile h4 {
+   font-size: 1rem;
 }
 
-.container .orders .div-item{
+.content .orders .div-item{
    margin-bottom: 20px;
 }
 
-.container .orders{
+.content .orders{
    width: 50%;
-   
+   margin: 0 auto;
 }
-.container .orders .infoBuyer .card .card-body .h5, h5 {
+
+
+.content .orders .infoBuyer .card .card-body .h5, h5 {
    font-size: 17px;
 } 

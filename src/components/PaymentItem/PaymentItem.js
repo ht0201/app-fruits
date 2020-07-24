@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 
 import './PaymentItem.css';
 
+
 class PaymentItem extends Component {
+
+
    render() {
       var {item} = this.props;
       return (

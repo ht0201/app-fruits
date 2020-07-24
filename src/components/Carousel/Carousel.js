@@ -9,11 +9,13 @@ class Carousel extends Component {
          <div className="slice" >
             <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                     <img src="img/organic-food-1.png" className="d-block w-100" alt="1" />
+                  <div className="carousel-item placeholder active">
+                     <img src="img/organic-food-1.png" className="d-block w-100 img-small" alt="1" />
+                     <div className="mask waves-effect waves-light" style={{paddingBottom: "66.6%"}}></div>
                   </div>
-                  <div className="carousel-item">
-                     <img src="img/organic-food-2.jpg" className="d-block w-100" alt="2" />
+                  <div className="carousel-item placeholder">
+                     <img src="img/organic-food-2.jpg" className="d-block w-100 img-small" alt="2" />
+                     <div className="mask waves-effect waves-light" style={{paddingBottom: "66.6%"}}></div>
                   </div>                          
                   <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                      <span className="carousel-control-prev-icon" aria-hidden="true"></span>

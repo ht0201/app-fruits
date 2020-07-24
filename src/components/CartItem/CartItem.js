@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 
 import './CartItem.css';
+import { MSG_DELETE_PRODUCT_IN_CART_SUCCESS, MSG_UPDATE_CART_SUCCESS, MSG_CART_EMPTY, MSG_WELCOME } from '../../constants/Message';
+
 
 class CartItem extends Component {
+
+   componentDidMount() {
+      var {item} = this.props;
+      if(item !== null) {
+         this.props.onChangeMessage(MSG_WELCOME);
+      }
+      else {
+         this.props.onChangeMessage(MSG_CART_EMPTY);
+      }
+   }
    render() {
       var {item} = this.props;
+     
       return (
          <tr className="tr">
             <td style={{ verticalAlign: "middle" }}>
@@ -49,18 +62,23 @@ class CartItem extends Component {
    showAmount = (price, quantity) => {
       return price * quantity;
     }
+
     onDelete = (product) => { 
       var { onDeleteProductInCart } = this.props;
       onDeleteProductInCart(product);
+      this.props.onChangeMessage(MSG_DELETE_PRODUCT_IN_CART_SUCCESS);
 
     }
     onUpdateQuantity = (product, quantity) => {
-      var { onDeleteProductInCart,  onUpdateProductInCart } = this.props;
+      var { onDeleteProductInCart,  onUpdateProductInCart } = this.props; 
       if(quantity > 0) {
-        onUpdateProductInCart(product, quantity);
+            onUpdateProductInCart(product, quantity);
+            this.props.onChangeMessage(MSG_UPDATE_CART_SUCCESS);
+           
       } else {
-         onDeleteProductInCart(product);           
-      }   
+            onDeleteProductInCart(product);
+            this.props.onChangeMessage(MSG_DELETE_PRODUCT_IN_CART_SUCCESS);                    
+      }       
     }
 }
 

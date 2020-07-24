@@ -8,5 +8,6 @@ export default function callApi(endpoint, method='GET', body){
       data: body
    }).catch (err => {
          console.log(err);
+         
    });
 }

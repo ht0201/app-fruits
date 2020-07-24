@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { actOrders } from '../../actions';
+import { actOrders, actClearCart } from '../../actions';
 import PaymentItem from './../../components/PaymentItem/PaymentItem';
 import PaymentInfo from '../../components/PaymentInfo/PaymentInfo';
 import PaymentResult from './../../components/PaymentResult/PaymentResult';
@@ -8,11 +8,11 @@ import PaymentResult from './../../components/PaymentResult/PaymentResult';
 class PaymentPage extends Component {
 
    render() {
-      var { cart, onOrder } = this.props;
-      
+      var { cart, onOrder, onClearCart } = this.props;
+      console.log("PAY ",this.props);
       return (
          <div className="container">
-            <PaymentInfo onOrder={onOrder} cart={cart}>
+            <PaymentInfo onOrder={onOrder} cart={cart} onClearCart={onClearCart}>
                {this.showPaymentItem(cart)}
                {this.showTotalAmount(cart)}
                
@@ -56,6 +56,9 @@ const mapDispatchToProps = (dispatch, action) => {
    return {
       onOrder: (cart, buyer) => {
          dispatch(actOrders(cart, buyer));
+      },
+      onClearCart: () => {
+         dispatch(actClearCart());
       }
    }
 }

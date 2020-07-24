@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 class OrderItem extends Component {
+
+
    render() {
       var { item, index } = this.props;
       return (

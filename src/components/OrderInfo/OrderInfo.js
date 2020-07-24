@@ -7,7 +7,7 @@ class OrderInfo extends Component {
    render() {
       var { orders } = this.props;
       return (
-         <div className="container">
+         <div className="content">
             <div className="orders">
                <div className="div-item title">
                   <h4> THANK YOU </h4>
@@ -30,7 +30,7 @@ class OrderInfo extends Component {
                <div className="div-item infoCart">
                   <div className="card">
                      <h5 className="card-title mt-2 ml-4">Thông tin sản phẩm</h5>
-                     <table class="table table-bordered">
+                     <table className="table table-bordered">
                         <thead>
                            <tr>
                               <th> STT</th>

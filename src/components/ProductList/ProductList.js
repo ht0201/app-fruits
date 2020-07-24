@@ -5,6 +5,7 @@ import './ProductList.css';
 class ProductList extends Component {
 
    render() {
+      
       return (
          <div className="container">
             <div className="e-tabs">
@@ -21,7 +22,8 @@ class ProductList extends Component {
                      > 
                   XEM GIỎ HÀNG 
                </Link>
-            </div>        
+            </div> 
+
          </div>
       );
    }

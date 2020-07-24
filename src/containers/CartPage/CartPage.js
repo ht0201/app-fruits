@@ -4,15 +4,16 @@ import {connect} from 'react-redux';
 import Cart from './../../components/Cart/Cart';
 import CartItem from './../../components/CartItem/CartItem';
 import CartResult from './../../components/CartResult/CartResult';
-import { actRemoveProduct , actUpdateProductInCart, actFetchProductsRequest } from './../../actions/index';
-
+import { actRemoveProduct , actUpdateProductInCart, actFetchProductsRequest, actChangeMessage } from './../../actions/index';
+import MessageContainer from '../MessageContainer';
 
 class CartPage extends Component {
    render() {
       var {cart} =this.props;
-      console.log(cart);
+      console.log("CAR ",this.props);
       return (
          <div className="container">
+            <MessageContainer />
             <Cart>
                {this.showCartItem(cart)}
                {this.showTotalAmount(cart)}
@@ -27,7 +28,7 @@ class CartPage extends Component {
    }
 
    showCartItem = cart => {
-      var {onDeleteProductInCart, onUpdateProductInCart } = this.props;          
+      var {onDeleteProductInCart, onUpdateProductInCart , onChangeMessage } = this.props;          
       var result = null;   
       if(cart.length > 0) {
          result = cart.map((item, index) => {
@@ -36,7 +37,8 @@ class CartPage extends Component {
                      item={item}
                      index={index}    
                      onDeleteProductInCart={onDeleteProductInCart}                       
-                     onUpdateProductInCart={onUpdateProductInCart}     
+                     onUpdateProductInCart={onUpdateProductInCart}   
+                     onChangeMessage={onChangeMessage}  
                    />
          })
       }
@@ -70,7 +72,10 @@ const mapDispatchToProps = (dispatch, action) => {
 
      onFetchProductInCart: () => {
         dispatch(actFetchProductsRequest());
-     }
+     },
+      onChangeMessage: (message) => {
+        dispatch(actChangeMessage(message));
+      }
    }
  }
 

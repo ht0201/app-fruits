@@ -12,14 +12,13 @@ const orders = (state = initialState, action) => {
             buyer
          }
          localStorage.setItem('ORDERS', JSON.stringify(state));
-         window.onbeforeunload = function() {
-            localStorage.removeItem('ORDERS');
-            localStorage.removeItem('CART');
-            return '';
-          };
+        
+         
          return state;
+         
       default:
-         return state;
+        
+         return state;  
    }
 }
 

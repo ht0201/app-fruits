@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class CartResult extends Component {
    render() {
       var { cart } = this.props;
-      console.log(cart);
+    
       return (
          <tr>
             <td >
