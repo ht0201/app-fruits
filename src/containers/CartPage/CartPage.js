@@ -10,7 +10,7 @@ import MessageContainer from '../MessageContainer';
 class CartPage extends Component {
    render() {
       var {cart} =this.props;
-      console.log("CAR ",this.props);
+     
       return (
          <div className="container">
             <MessageContainer />

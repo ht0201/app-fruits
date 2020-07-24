@@ -9,7 +9,7 @@ class PaymentPage extends Component {
 
    render() {
       var { cart, onOrder, onClearCart } = this.props;
-      console.log("PAY ",this.props);
+      
       return (
          <div className="container">
             <PaymentInfo onOrder={onOrder} cart={cart} onClearCart={onClearCart}>

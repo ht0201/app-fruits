@@ -14,7 +14,7 @@ class OrderPage extends Component {
    render() {
       var { orders }  = this.props;
       var { cart } = orders;
-      console.log("ORD ",this.props);
+      
       return (
          <div className="container">
             <OrderInfo orders={orders}>
