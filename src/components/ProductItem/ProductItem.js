@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
 
 import './ProductItem.css';
-import {  MSG_ADD_TO_CART_SUCCESS, MSG_WELCOME, MSG_CART_EMPTY } from '../../constants/Message';
+import {  MSG_ADD_TO_CART_SUCCESS} from '../../constants/Message';
+import { toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 class ProductItem extends Component {
 
-  componentDidMount() {
-    var {product} = this.props;
-    if(product !== null) {
-       this.props.onChangeMessage(MSG_WELCOME);
-    }
-    else {
-       this.props.onChangeMessage(MSG_CART_EMPTY);
-    }
+  componentDidUpdate(prevProps) {
     
-    
-
+    if(prevProps.product !== this.props.product){
+      this.props.onChangeMessage(MSG_ADD_TO_CART_SUCCESS);
+    }
   }
 
+ 
   
 
-
- 
   render() {
+  
     var { product} = this.props;
    //  window.onload = function() {
     
@@ -64,8 +61,8 @@ class ProductItem extends Component {
       <div className="col-lg-3 col-md-4 col-sm-10 mb-r">
           <div className="card text-center card-cascade narrower">
             <div className="view overlay hm-white-slight z-depth-1">
-               <img src= {product.image}
-               className="img-fluid" alt={product.name} />
+               <img data-src= {product.image}
+               className="img-fluid lazyload" alt={product.name} />
                <a>
                <div className="mask waves-light waves-effect waves-light"></div>
                </a>
@@ -99,7 +96,12 @@ class ProductItem extends Component {
 
   onAddToCart = (product, quantity) => {
     this.props.onAddToCart(product, quantity);
-    this.props.onChangeMessage(MSG_ADD_TO_CART_SUCCESS);
+    this.showSuccess();
+   
+  }
+
+  showSuccess = () => {
+    toast.success(MSG_ADD_TO_CART_SUCCESS);
   }
 
 

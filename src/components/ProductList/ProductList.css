@@ -10,8 +10,8 @@
 .container .cart{
    width: 100%;
    
-    align-items: center;
-    justify-content: space-around;
+   text-align: center;
+   margin-top: 1rem;
 }
 
 .container {

@@ -51,7 +51,7 @@ const cart = (state = initialState, action) => {
          return [...state];
 
       case Types.CLEAR_CART:
-         console.log(action.cart);
+    
          localStorage.removeItem("CART");
          state = [];
          return state;

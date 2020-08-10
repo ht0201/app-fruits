@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
 
 import './CartItem.css';
-import { MSG_DELETE_PRODUCT_IN_CART_SUCCESS, MSG_UPDATE_CART_SUCCESS, MSG_CART_EMPTY, MSG_WELCOME } from '../../constants/Message';
-
+import { MSG_DELETE_PRODUCT_IN_CART_SUCCESS, MSG_UPDATE_CART_SUCCESS} from '../../constants/Message';
+import { toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class CartItem extends Component {
 
-   componentDidMount() {
-      var {item} = this.props;
-      if(item !== null) {
-         this.props.onChangeMessage(MSG_WELCOME);
-      }
-      else {
-         this.props.onChangeMessage(MSG_CART_EMPTY);
-      }
-   }
+  
    render() {
       var {item} = this.props;
      
@@ -66,19 +59,28 @@ class CartItem extends Component {
     onDelete = (product) => { 
       var { onDeleteProductInCart } = this.props;
       onDeleteProductInCart(product);
-      this.props.onChangeMessage(MSG_DELETE_PRODUCT_IN_CART_SUCCESS);
-
+      this.showRemove();    
     }
+
+
     onUpdateQuantity = (product, quantity) => {
       var { onDeleteProductInCart,  onUpdateProductInCart } = this.props; 
       if(quantity > 0) {
             onUpdateProductInCart(product, quantity);
-            this.props.onChangeMessage(MSG_UPDATE_CART_SUCCESS);
+            this.showUpdate();
            
       } else {
             onDeleteProductInCart(product);
-            this.props.onChangeMessage(MSG_DELETE_PRODUCT_IN_CART_SUCCESS);                    
+            this.showRemove();                    
       }       
+    }
+
+    showUpdate = () => {
+      toast.info(MSG_UPDATE_CART_SUCCESS);
+    }
+
+    showRemove = () => {
+      toast.error(MSG_DELETE_PRODUCT_IN_CART_SUCCESS);
     }
 }
 

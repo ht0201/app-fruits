@@ -1,29 +1,16 @@
 import React, { Component } from 'react';
-import {connect}  from 'react-redux';
-import Message from '../components/Message';
 
-
-
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class MessageContainer extends Component {
+
   render() {
-    var { message } = this.props;
-    
     return (
-      <Message message={message}/>     
+      <ToastContainer autoClose={2000} />
     );
   }
-
 }
 
-
-
-const mapStateToProps = state => {
-  return {
-    message: state.message
-  }  
-}
-
-
-export default connect(mapStateToProps, null)(MessageContainer);
+export default MessageContainer;
 
