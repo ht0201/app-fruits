@@ -61,8 +61,8 @@ class ProductItem extends Component {
       <div className="col-lg-3 col-md-4 col-sm-10 mb-r">
           <div className="card text-center card-cascade narrower">
             <div className="view overlay hm-white-slight z-depth-1">
-               <img data-src= {product.image}
-               className="img-fluid lazyload" alt={product.name} />
+               <img src= {product.image}
+               className="img-fluid" alt={product.name} />
                <a>
                <div className="mask waves-light waves-effect waves-light"></div>
                </a>
