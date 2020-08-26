@@ -7,11 +7,17 @@
 }
 
 .content .orders{
-   width: 50%;
+   width: 70%;
    margin: 0 auto;
 }
 
 
 .content .orders .infoBuyer .card .card-body .h5, h5 {
    font-size: 17px;
+} 
+
+@media only screen and  (max-width: 845px) {
+   .content {
+      width: 100%;
+   }
 } 

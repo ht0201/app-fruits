@@ -14,7 +14,7 @@ class PaymentItem extends Component {
                <img src={item.product.image} alt={item.product.name} />
             </td>
             <td style={{ verticalAlign: "middle" }}>         
-                  <h5> {item.product.name} </h5>
+                  {item.product.name} 
             </td>
             <td style={{ verticalAlign: "middle" }}>{item.product.price} $</td>
             <td style={{ verticalAlign: "middle" }}>  
